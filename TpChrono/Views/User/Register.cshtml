@@ -1,0 +1,25 @@
+﻿@model UserLoginViewModel 
+@{
+    ViewData["Title"] = "Se Connecter "; 
+
+<h2 class="text-center">Login</h2>
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <div class="jumbotron">
+            <form role="form" asp-action="Login" asp-controller="User" method="post">
+                <div class="form-group">
+                    <label asp-for="Login">Login</label> <!-- Use asp-for for model binding -->
+                    <input type="text" id="Login" name="Login" asp-for="Login" autocomplete="off" class="form-control input-sm" placeholder="Enter your login">
+                    <span asp-validation-for="Login" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password">Password</label>
+                    <input type="password" id="Password" name="Password" asp-for="Password" autocomplete="off" class="form-control input-sm" placeholder="Enter your password">
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-info btn-block">Login</button> <!-- Use button element for submission -->
+            </form>
+        </div>
+    </div>
+</div>
